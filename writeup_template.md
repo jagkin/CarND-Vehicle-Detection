@@ -53,7 +53,40 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and...
+Feature parameters tried
+
+
+################ Color, orients, pix_per_cell, cells_per_block, hog_channel, spatial_size, hist_bins, spatial, hist, hog
+paramset.append(['RBG',   9,      8,            2,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['HSV',   9,      8,            2,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['LUV',   9,      8,            2,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['HLS',   9,      8,            2,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['YUV',   9,      8,            2,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['YCrCb', 9,      8,            2,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['LUV',   10,     8,            2,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['LUV',   11,     8,            2,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['LUV',   11,     12,           2,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['LUV',   11,     12,           4,               'ALL',       (64, 64),      16,        True,   True,  True])
+paramset.append(['LUV',   11,     12,           4,               'ALL',       (32, 32),      16,        True,   True,  True])
+paramset.append(['LUV',   11,     12,           4,               'ALL',       (64, 64),      32,        True,   True,  True])
+paramset.append(['LUV',   11,     12,           4,               'ALL',       (64, 64),      16,        False,  False, True])
+
+paramset, Accuracy, Training time, Predict time(for 10 samples), feature length
+0 0.9747 97.23 0.00035 17628
+1 0.9806 89.95 0.00037 17628
+2 0.9848 77.76 0.00034 17628
+3 0.9764 23.24 0.00033 17628
+4 0.9887 29.64 0.00055 17628
+5 0.989 35.35 0.00035 17628
+6 0.9842 77.84 0.00035 18216
+7 0.9856 81.48 0.00037 18804
+8 0.9845 57.53 0.00029 14448
+9 0.9859 45.6 0.00029 14448
+10 0.9873 14.45 0.0002 5232
+11 0.987 55.86 0.00029 14496
+12 0.9727 6.82 0.00018 2112
+
+
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
